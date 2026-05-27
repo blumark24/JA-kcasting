@@ -3,78 +3,602 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#060807" />
+  <meta name="theme-color" content="#06122A" />
   <meta name="description" content="JA kcasting مكتب كاستنج سعودي احترافي لتنسيق الممثلين والوجوه الإعلانية والمودلز والمؤدين الصوتيين لشركات الإنتاج والوكالات عبر واتساب." />
   <title>JA kcasting | كاستنج سعودي بمعايير إنتاج عالمية</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Noto+Kufi+Arabic:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700;800;900&family=Noto+Kufi+Arabic:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --bg:        #06122A;   /* كحلي عميق */
+      --bg-2:      #0A1B3D;   /* أزرق ليلي */
+      --surface:   #0E224A;   /* سطح البطاقات */
+      --surface-2: #14306A;   /* تدرّج أعلى */
+      --line:      rgba(214, 226, 247, .12);
+      --line-2:    rgba(214, 226, 247, .22);
+      --ink:       #F4F7FC;   /* النص الرئيسي */
+      --muted:     #A8B6D1;   /* النص الثانوي */
+      --blue:      #1E5BD1;   /* الأزرق الملكي */
+      --blue-2:    #2E72F0;   /* أزرق فاتح */
+      --blue-deep: #0E3A8A;   /* أزرق عميق */
+      --gold:      #C9A24A;   /* الذهبي الفاخر */
+      --gold-2:    #E6C679;   /* ذهبي فاتح */
+      --wa:        #25D366;   /* واتساب */
+    }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { margin: 0; background: #060807; color: #f8f3e8; font-family: "IBM Plex Sans Arabic", system-ui, sans-serif; }
-    h1, h2, h3, .display { font-family: "Noto Kufi Arabic", "IBM Plex Sans Arabic", system-ui, sans-serif; }
-    .muted { color: #b8b0a2; } .line { border-color: rgba(248, 243, 232, .12); }
-    .panel { background: rgba(12, 16, 15, .82); border: 1px solid rgba(248, 243, 232, .12); }
-    .panel-soft { background: rgba(248, 243, 232, .045); border: 1px solid rgba(248, 243, 232, .10); }
-    .btn-main { background: #18b977; color: #04100a; } .btn-main:hover { background: #21d98d; }
-    .section { padding-block: clamp(72px, 8vw, 116px); }
-    .hero-overlay { background: radial-gradient(circle at 18% 24%, rgba(202,167,96,.18), transparent 34%), radial-gradient(circle at 76% 30%, rgba(24,185,119,.13), transparent 30%), linear-gradient(90deg, rgba(6,8,7,.22), rgba(6,8,7,.72) 43%, rgba(6,8,7,.98)); }
-    .gridlines { background-image: linear-gradient(rgba(248,243,232,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(248,243,232,.045) 1px, transparent 1px); background-size: 48px 48px; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "IBM Plex Sans Arabic", "Tajawal", system-ui, sans-serif;
+      font-feature-settings: "ss01", "kern";
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: -0.005em;
+    }
+    h1, h2, h3, .display {
+      font-family: "Tajawal", "Noto Kufi Arabic", "IBM Plex Sans Arabic", system-ui, sans-serif;
+      letter-spacing: -0.02em;
+    }
+    .muted { color: var(--muted); }
+    .line { border-color: var(--line); }
+    .line-2 { border-color: var(--line-2); }
+
+    /* أسطح وبطاقات */
+    .panel {
+      background: linear-gradient(180deg, rgba(20, 48, 106, .55), rgba(14, 34, 74, .65));
+      border: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 1px 0 rgba(255,255,255,.04) inset, 0 22px 60px -28px rgba(0,0,0,.55);
+    }
+    .panel-soft {
+      background: rgba(244, 247, 252, .035);
+      border: 1px solid var(--line);
+    }
+    .panel-light {
+      background: linear-gradient(180deg, #F7F9FD 0%, #EEF2FA 100%);
+      border: 1px solid rgba(11, 31, 70, .08);
+      color: #0B1F46;
+    }
+
+    /* أزرار */
+    .btn-primary {
+      background: linear-gradient(180deg, var(--blue-2) 0%, var(--blue) 100%);
+      color: #FFFFFF;
+      border: 1px solid rgba(255,255,255,.16);
+      box-shadow: 0 14px 34px -10px rgba(30, 91, 209, .55), 0 1px 0 rgba(255,255,255,.18) inset;
+    }
+    .btn-primary:hover { filter: brightness(1.07); transform: translateY(-1px); }
+    .btn-gold {
+      background: linear-gradient(180deg, var(--gold-2) 0%, var(--gold) 100%);
+      color: #1A1407;
+      border: 1px solid rgba(0,0,0,.08);
+      box-shadow: 0 12px 28px -10px rgba(201, 162, 74, .55), 0 1px 0 rgba(255,255,255,.35) inset;
+    }
+    .btn-gold:hover { filter: brightness(1.05); transform: translateY(-1px); }
+    .btn-ghost {
+      background: rgba(244,247,252,.05);
+      color: #FFFFFF;
+      border: 1px solid var(--line-2);
+    }
+    .btn-ghost:hover { background: rgba(244,247,252,.10); }
+    .btn-wa {
+      background: var(--wa);
+      color: #052e16;
+      border: 1px solid rgba(0,0,0,.08);
+      box-shadow: 0 14px 32px -10px rgba(37,211,102,.45);
+    }
+    .btn-wa:hover { filter: brightness(1.06); transform: translateY(-1px); }
+
+    .pill {
+      display: inline-flex; align-items: center; gap: .55rem;
+      padding: .55rem 1rem; border-radius: 999px;
+      background: rgba(201, 162, 74, .10);
+      border: 1px solid rgba(201, 162, 74, .35);
+      color: var(--gold-2);
+      font-weight: 700; font-size: .85rem;
+    }
+    .pill-blue {
+      background: rgba(46, 114, 240, .10);
+      border-color: rgba(46, 114, 240, .35);
+      color: #BFD4FF;
+    }
+    .dot {
+      width: 6px; height: 6px; border-radius: 999px; background: currentColor;
+      box-shadow: 0 0 0 4px rgba(201,162,74,.18);
+    }
+
+    /* تأثيرات الخلفية */
+    .section { padding-block: clamp(80px, 9vw, 132px); }
+    .hero-bg {
+      background:
+        radial-gradient(1100px 600px at 80% -10%, rgba(46,114,240,.32), transparent 60%),
+        radial-gradient(900px 520px at 8% 18%, rgba(201,162,74,.16), transparent 55%),
+        linear-gradient(180deg, #06122A 0%, #081A3A 60%, #06122A 100%);
+    }
+    .hero-overlay {
+      background:
+        linear-gradient(90deg, rgba(6,18,42,.96) 0%, rgba(6,18,42,.78) 38%, rgba(6,18,42,.42) 70%, rgba(6,18,42,.18) 100%);
+    }
+    .gridlines {
+      background-image:
+        linear-gradient(rgba(214,226,247,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(214,226,247,.05) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+    }
+    .arabesque {
+      position: absolute; inset: 0; pointer-events: none; opacity: .07;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><g fill='none' stroke='%23E6C679' stroke-width='1'><path d='M80 8 L152 80 L80 152 L8 80 Z'/><path d='M80 28 L132 80 L80 132 L28 80 Z'/><path d='M80 48 L112 80 L80 112 L48 80 Z'/><circle cx='80' cy='80' r='6'/></g></svg>");
+      background-size: 160px 160px;
+    }
+    .hairline {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201,162,74,.45), transparent);
+    }
+    .glow-blue {
+      box-shadow: 0 0 0 1px rgba(46,114,240,.35), 0 30px 80px -30px rgba(46,114,240,.55);
+    }
+
+    /* تذييل الأرقام */
+    .num {
+      font-family: "Tajawal", system-ui, sans-serif;
+      font-variant-numeric: tabular-nums;
+    }
+    details[open] summary .chev { transform: rotate(-180deg); }
+    .chev { transition: transform .2s ease; }
+
+    /* تركيز سهل لمصممي A11y */
+    :focus-visible { outline: 2px solid var(--gold-2); outline-offset: 3px; border-radius: 8px; }
   </style>
 </head>
 <body>
-  <header class="fixed inset-x-0 top-0 z-50 border-b line bg-[#060807]/88 backdrop-blur-xl">
-    <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-      <a href="#top" class="flex items-center gap-3"><span class="display flex h-11 w-11 items-center justify-center rounded-md border line bg-[#111514] text-lg font-extrabold text-[#CAA760]">JA</span><span class="text-right"><strong class="display block text-xl font-extrabold leading-none text-white">JA kcasting</strong><small class="mt-1 block text-[11px] font-semibold text-[#CAA760]">Saudi Casting Office</small></span></a>
-      <nav class="hidden items-center gap-8 text-sm font-semibold muted md:flex"><a class="hover:text-white" href="#agencies">للشركات</a><a class="hover:text-white" href="#talents">للمواهب</a><a class="hover:text-white" href="#categories">الفئات</a><a class="hover:text-white" href="#workflow">آلية العمل</a></nav>
-      <a data-wa="general" href="#" class="rounded-md btn-main px-5 py-3 text-sm font-bold shadow-[0_12px_30px_rgba(24,185,119,.24)] transition hover:-translate-y-0.5">واتساب مباشر</a>
+
+  <!-- شريط علوي رسمي -->
+  <div class="hidden md:block border-b line bg-[#04102A]">
+    <div class="mx-auto flex h-9 max-w-7xl items-center justify-between px-4 text-xs muted sm:px-6 lg:px-8">
+      <div class="flex items-center gap-5">
+        <span class="flex items-center gap-2"><span class="dot text-[var(--gold)]"></span>المملكة العربية السعودية · الرياض</span>
+        <span>السبت – الخميس · 9 ص — 9 م</span>
+      </div>
+      <div class="flex items-center gap-5">
+        <span>تواصل مباشر:</span>
+        <a data-wa="general" href="#" class="font-bold text-[var(--gold-2)] hover:text-white">+966 53 311 6166</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- الشريط الرئيسي -->
+  <header class="sticky top-0 z-50 border-b line bg-[#06122A]/92 backdrop-blur-xl">
+    <div class="mx-auto flex h-20 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
+      <a href="#top" class="flex items-center gap-3">
+        <span class="display flex h-12 w-12 items-center justify-center rounded-lg border border-[var(--gold)]/40 bg-gradient-to-b from-[#0E224A] to-[#06122A] text-xl font-extrabold text-[var(--gold-2)] shadow-[0_8px_24px_-8px_rgba(201,162,74,.5)]">JA</span>
+        <span class="text-right leading-tight">
+          <strong class="display block text-xl font-extrabold text-white">JA kcasting</strong>
+          <small class="mt-1 block text-[11px] font-bold tracking-[.18em] text-[var(--gold-2)]">SAUDI · CASTING · OFFICE</small>
+        </span>
+      </a>
+      <nav class="hidden items-center gap-9 text-sm font-bold text-[var(--muted)] md:flex">
+        <a class="hover:text-white" href="#agencies">للشركات</a>
+        <a class="hover:text-white" href="#talents">للمواهب</a>
+        <a class="hover:text-white" href="#categories">الفئات</a>
+        <a class="hover:text-white" href="#workflow">آلية العمل</a>
+        <a class="hover:text-white" href="#faq">الأسئلة</a>
+      </nav>
+      <a data-wa="general" href="#" class="hidden rounded-lg btn-primary px-5 py-3 text-sm font-extrabold transition md:inline-flex">تواصل عبر واتساب</a>
     </div>
   </header>
 
   <main id="top">
-    <section class="relative min-h-screen overflow-hidden pt-20">
-      <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1900&q=82" alt="" class="absolute inset-0 h-full w-full object-cover opacity-72" />
-      <div class="absolute inset-0 hero-overlay"></div><div class="absolute inset-0 gridlines opacity-40"></div>
-      <div class="relative z-10 mx-auto grid min-h-[calc(100vh-80px)] max-w-7xl grid-cols-1 items-center gap-12 px-4 py-14 sm:px-6 lg:grid-cols-12 lg:px-8">
+    <!-- البطل / الواجهة -->
+    <section class="relative overflow-hidden hero-bg pt-12 lg:pt-16">
+      <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1900&q=82" alt="" class="absolute inset-0 h-full w-full object-cover opacity-25" />
+      <div class="absolute inset-0 hero-overlay"></div>
+      <div class="absolute inset-0 gridlines opacity-60"></div>
+      <div class="arabesque"></div>
+
+      <div class="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 pb-20 pt-10 sm:px-6 lg:grid-cols-12 lg:gap-10 lg:px-8 lg:pb-28 lg:pt-16">
         <div class="max-w-3xl text-right lg:col-span-7">
-          <div class="mb-7 inline-flex rounded-md border border-[#CAA760]/35 bg-[#CAA760]/10 px-4 py-2 text-sm font-bold text-[#CAA760]">كاستنج سعودي فاخر للإعلانات والإنتاج</div>
-          <h1 class="display text-[2.45rem] font-extrabold leading-[1.25] text-white sm:text-6xl lg:text-[4.55rem]">وجوه مناسبة.<span class="block text-[#CAA760]">ترشيح مختصر. تنفيذ أسرع.</span></h1>
-          <p class="mt-7 max-w-2xl text-lg font-medium leading-9 muted sm:text-xl">JA kcasting مكتب تنسيق كاستنج يربط شركات الإنتاج والوكالات والبراندات بمواهب سعودية جاهزة: ممثلين، وجوه إعلانية، مودلز، مؤدين صوتيين، وصناع محتوى. نختصر البحث العشوائي إلى قائمة ترشيح واضحة عبر واتساب.</p>
-          <div class="mt-9 grid gap-3 sm:grid-cols-2"><a data-wa="casting" href="#" class="rounded-md btn-main px-7 py-4 text-center text-lg font-extrabold shadow-[0_18px_44px_rgba(24,185,119,.26)] transition hover:-translate-y-0.5">أرسل طلب كاستنج الآن</a><a data-wa="talent" href="#" class="rounded-md border line bg-white/5 px-7 py-4 text-center text-lg font-bold text-white transition hover:bg-white/10">سجّل كموهبة</a></div>
-          <div class="mt-8 grid gap-3 text-sm font-semibold text-[#ded7c8] sm:grid-cols-3"><div class="rounded-md border line bg-black/25 p-3">سرية كاملة للملفات</div><div class="rounded-md border line bg-black/25 p-3">فرز حسب المشروع</div><div class="rounded-md border line bg-black/25 p-3">واتساب من أول خطوة</div></div>
+          <div class="pill mb-7"><span class="dot"></span>كاستنج سعودي بمعايير الإنتاج الفاخر</div>
+          <h1 class="display text-[2.55rem] font-black leading-[1.18] text-white sm:text-6xl lg:text-[4.6rem]">
+            وجوه مناسبة.
+            <span class="block bg-gradient-to-l from-[var(--gold-2)] via-[var(--gold)] to-[#B07F1E] bg-clip-text text-transparent">ترشيح مختصر. تنفيذ أسرع.</span>
+          </h1>
+          <p class="mt-7 max-w-2xl text-lg font-medium leading-9 text-[#C8D3EA] sm:text-xl">
+            <strong class="text-white">JA kcasting</strong> مكتب تنسيق كاستنج يربط شركات الإنتاج والوكالات والبراندات بمواهب سعودية جاهزة:
+            ممثلين، وجوه إعلانية، مودلز، مؤدين صوتيين، وصناع محتوى. نختصر البحث العشوائي إلى قائمة ترشيح واضحة عبر واتساب.
+          </p>
+
+          <div class="mt-9 grid gap-3 sm:grid-cols-2">
+            <a data-wa="casting" href="#" class="rounded-xl btn-primary px-7 py-4 text-center text-lg font-extrabold transition">أرسل طلب كاستنج الآن</a>
+            <a data-wa="talent" href="#" class="rounded-xl btn-ghost px-7 py-4 text-center text-lg font-bold transition">سجّل كموهبة</a>
+          </div>
+
+          <div class="mt-10 grid gap-3 text-sm font-semibold sm:grid-cols-3">
+            <div class="flex items-center gap-3 rounded-lg border line bg-black/25 p-3.5">
+              <span class="flex h-7 w-7 items-center justify-center rounded-md bg-[var(--gold)]/15 text-[var(--gold-2)]">①</span>
+              <span class="text-[#DDE5F4]">سرية كاملة للملفات</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-lg border line bg-black/25 p-3.5">
+              <span class="flex h-7 w-7 items-center justify-center rounded-md bg-[var(--gold)]/15 text-[var(--gold-2)]">②</span>
+              <span class="text-[#DDE5F4]">فرز دقيق حسب المشروع</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-lg border line bg-black/25 p-3.5">
+              <span class="flex h-7 w-7 items-center justify-center rounded-md bg-[var(--gold)]/15 text-[var(--gold-2)]">③</span>
+              <span class="text-[#DDE5F4]">تنسيق عبر واتساب</span>
+            </div>
+          </div>
         </div>
-        <div class="lg:col-span-5"><div class="panel rounded-md p-5 shadow-2xl"><div class="flex items-start justify-between gap-5 border-b line pb-5"><div class="text-right"><p class="text-xs font-bold uppercase tracking-wide text-[#18B977]">Casting Brief</p><h2 class="display mt-2 text-2xl font-bold text-white">نموذج طلب جاهز للفرز</h2></div><span class="rounded-md bg-[#18B977]/12 px-3 py-1 text-xs font-bold text-[#18B977]">نشط</span></div><div class="grid grid-cols-2 gap-3 py-5 text-right text-sm"><div class="rounded-md bg-white/[.045] p-4"><span class="block muted">المشروع</span><strong class="mt-1 block text-white">إعلان تجاري</strong></div><div class="rounded-md bg-white/[.045] p-4"><span class="block muted">الفئة</span><strong class="mt-1 block text-white">وجه إعلاني</strong></div><div class="rounded-md bg-white/[.045] p-4"><span class="block muted">النطاق</span><strong class="mt-1 block text-white">الرياض / جدة</strong></div><div class="rounded-md bg-white/[.045] p-4"><span class="block muted">اللهجة</span><strong class="mt-1 block text-white">سعودية بيضاء</strong></div></div><div class="rounded-md border border-[#CAA760]/25 bg-[#CAA760]/10 p-4 text-right"><span class="text-sm font-bold text-[#CAA760]">مخرجات الترشيح</span><div class="mt-3 flex items-end justify-between gap-4"><strong class="display text-5xl text-white">14</strong><p class="pb-1 text-sm leading-7 muted">بروفايل مختصر قابل للمراجعة والتواصل</p></div></div><a data-wa="urgent" href="#" class="mt-4 flex justify-center rounded-md border border-[#18B977]/45 px-5 py-3 text-sm font-bold text-[#18B977] transition hover:bg-[#18B977] hover:text-[#04100A]">لدي طلب عاجل</a></div></div>
+
+        <!-- بطاقة الـ Brief -->
+        <div class="lg:col-span-5">
+          <div class="panel glow-blue rounded-2xl p-6 shadow-2xl">
+            <div class="flex items-start justify-between gap-5 border-b line pb-5">
+              <div class="text-right">
+                <p class="text-[11px] font-extrabold uppercase tracking-[.22em] text-[var(--gold-2)]">Casting Brief</p>
+                <h2 class="display mt-2 text-2xl font-extrabold text-white">نموذج طلب جاهز للفرز</h2>
+              </div>
+              <span class="pill-blue pill"><span class="dot"></span>نشط</span>
+            </div>
+            <div class="grid grid-cols-2 gap-3 py-5 text-right text-sm">
+              <div class="rounded-lg bg-white/[.04] p-4 ring-1 ring-white/5">
+                <span class="block text-xs muted">المشروع</span>
+                <strong class="mt-1 block text-base text-white">إعلان تجاري</strong>
+              </div>
+              <div class="rounded-lg bg-white/[.04] p-4 ring-1 ring-white/5">
+                <span class="block text-xs muted">الفئة</span>
+                <strong class="mt-1 block text-base text-white">وجه إعلاني</strong>
+              </div>
+              <div class="rounded-lg bg-white/[.04] p-4 ring-1 ring-white/5">
+                <span class="block text-xs muted">النطاق</span>
+                <strong class="mt-1 block text-base text-white">الرياض / جدة</strong>
+              </div>
+              <div class="rounded-lg bg-white/[.04] p-4 ring-1 ring-white/5">
+                <span class="block text-xs muted">اللهجة</span>
+                <strong class="mt-1 block text-base text-white">سعودية بيضاء</strong>
+              </div>
+            </div>
+            <div class="rounded-xl border border-[var(--gold)]/35 bg-gradient-to-l from-[var(--gold)]/12 to-transparent p-4 text-right">
+              <span class="text-xs font-extrabold uppercase tracking-[.22em] text-[var(--gold-2)]">مخرجات الترشيح</span>
+              <div class="mt-3 flex items-end justify-between gap-4">
+                <strong class="display num text-5xl font-black text-white">14</strong>
+                <p class="pb-1 text-sm leading-7 muted">بروفايل مختصر قابل للمراجعة والتواصل خلال 24 ساعة عمل</p>
+              </div>
+            </div>
+            <a data-wa="urgent" href="#" class="mt-4 flex items-center justify-center gap-2 rounded-xl border border-[var(--gold)]/45 bg-[var(--gold)]/8 px-5 py-3 text-sm font-extrabold text-[var(--gold-2)] transition hover:bg-[var(--gold)] hover:text-[#1A1407]">
+              <span>لدي طلب عاجل</span>
+              <span aria-hidden>←</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hairline"></div>
+    </section>
+
+    <!-- شريط الإحصائيات -->
+    <section class="border-y line bg-[#04102A]">
+      <div class="mx-auto grid max-w-7xl gap-px bg-[var(--line)] sm:grid-cols-4">
+        <div class="bg-[#04102A] p-7 text-right">
+          <strong class="display num block text-3xl font-black text-white">100%</strong>
+          <span class="mt-1 block text-sm muted">تحويل مباشر إلى واتساب</span>
+        </div>
+        <div class="bg-[#04102A] p-7 text-right">
+          <strong class="display num block text-3xl font-black text-[var(--gold-2)]">+6</strong>
+          <span class="mt-1 block text-sm muted">فئات رئيسية للترشيح</span>
+        </div>
+        <div class="bg-[#04102A] p-7 text-right">
+          <strong class="display num block text-3xl font-black text-[#BFD4FF]">24h</strong>
+          <span class="mt-1 block text-sm muted">إيقاع ردّ افتراضي</span>
+        </div>
+        <div class="bg-[#04102A] p-7 text-right">
+          <strong class="display block text-3xl font-black text-white">خاص</strong>
+          <span class="mt-1 block text-sm muted">بدون عرض بيانات علني</span>
+        </div>
       </div>
     </section>
 
-    <section class="border-y line bg-[#0A0D0C] py-8"><div class="mx-auto grid max-w-7xl gap-4 px-4 sm:grid-cols-3 sm:px-6 lg:px-8"><div class="text-right"><strong class="display block text-3xl text-[#18B977]">100%</strong><span class="muted">تحويل مباشر إلى واتساب</span></div><div class="text-right"><strong class="display block text-3xl text-[#CAA760]">6+</strong><span class="muted">فئات رئيسية للترشيح</span></div><div class="text-right"><strong class="display block text-3xl text-white">خاص</strong><span class="muted">بدون عرض بيانات علني</span></div></div></section>
+    <!-- للشركات -->
+    <section id="agencies" class="section relative">
+      <div class="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+        <div class="text-right lg:col-span-5">
+          <div class="pill mb-5"><span class="dot"></span>لشركات الإنتاج والوكالات</div>
+          <h2 class="display text-3xl font-black leading-tight text-white sm:text-4xl lg:text-[2.7rem]">
+            اختصر قرار الكاستنج بدون فوضى القروبات والبحث المفتوح.
+          </h2>
+          <p class="mt-5 text-lg leading-9 muted">
+            نقرأ الـ Brief، نفهم شخصية البراند، ثم نرشّح وجوهاً مناسبة لطبيعة المشروع — وليس مجرد أسماء متاحة.
+            نتعامل مع كل طلب بسرّية كاملة وبفهم لمتطلبات السوق السعودي.
+          </p>
+          <div class="mt-7 flex flex-wrap gap-3">
+            <a data-wa="casting" href="#" class="rounded-xl btn-primary px-6 py-3 text-sm font-extrabold transition">ابدأ طلب كاستنج</a>
+            <a data-wa="general" href="#" class="rounded-xl btn-ghost px-6 py-3 text-sm font-bold transition">استشارة قبل الطلب</a>
+          </div>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2 lg:col-span-7">
+          <article class="panel rounded-2xl p-6 text-right transition hover:border-[var(--gold)]/45">
+            <span class="flex h-11 w-11 items-center justify-center rounded-lg bg-[var(--blue)]/15 text-[var(--blue-2)] ring-1 ring-[var(--blue)]/35">★</span>
+            <h3 class="display mt-4 text-xl font-extrabold text-white">ترشيح إعلاني</h3>
+            <p class="mt-3 leading-8 muted">وجوه مناسبة للحملات، المنتجات، المقاطع القصيرة، واللوحات.</p>
+          </article>
+          <article class="panel rounded-2xl p-6 text-right transition hover:border-[var(--gold)]/45">
+            <span class="flex h-11 w-11 items-center justify-center rounded-lg bg-[var(--blue)]/15 text-[var(--blue-2)] ring-1 ring-[var(--blue)]/35">▶</span>
+            <h3 class="display mt-4 text-xl font-extrabold text-white">ترشيح إنتاجي</h3>
+            <p class="mt-3 leading-8 muted">ممثلين ومؤدين لأعمال درامية، مؤسسية، وسينمائية قصيرة.</p>
+          </article>
+          <article class="panel rounded-2xl p-6 text-right transition hover:border-[var(--gold)]/45">
+            <span class="flex h-11 w-11 items-center justify-center rounded-lg bg-[var(--blue)]/15 text-[var(--blue-2)] ring-1 ring-[var(--blue)]/35">♫</span>
+            <h3 class="display mt-4 text-xl font-extrabold text-white">ترشيح صوتي</h3>
+            <p class="mt-3 leading-8 muted">خامات صوتية للإعلانات، الدبلجة، الرد الآلي، والتعليق.</p>
+          </article>
+          <article class="panel rounded-2xl p-6 text-right transition hover:border-[var(--gold)]/45">
+            <span class="flex h-11 w-11 items-center justify-center rounded-lg bg-[var(--blue)]/15 text-[var(--blue-2)] ring-1 ring-[var(--blue)]/35">⚡</span>
+            <h3 class="display mt-4 text-xl font-extrabold text-white">تنسيق عاجل</h3>
+            <p class="mt-3 leading-8 muted">للمشاريع القريبة التي تحتاج قائمة أولية بسرعة ووضوح.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <section id="agencies" class="section"><div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8"><div class="text-right lg:col-span-5"><p class="text-sm font-bold text-[#CAA760]">لشركات الإنتاج والوكالات</p><h2 class="display mt-3 text-3xl font-extrabold leading-tight text-white sm:text-4xl">اختصر قرار الكاستنج بدون فوضى القروبات والبحث المفتوح.</h2><p class="mt-4 text-lg leading-8 muted">نقرأ الـ Brief، نفهم شخصية البراند، ثم نرشح وجوهاً مناسبة لطبيعة المشروع، وليس مجرد أسماء متاحة.</p></div><div class="grid gap-4 lg:col-span-7 sm:grid-cols-2"><article class="panel rounded-md p-5 text-right"><h3 class="display text-xl font-bold text-white">ترشيح إعلاني</h3><p class="mt-3 leading-8 muted">وجوه مناسبة للحملات، المنتجات، المقاطع القصيرة، واللوحات.</p></article><article class="panel rounded-md p-5 text-right"><h3 class="display text-xl font-bold text-white">ترشيح إنتاجي</h3><p class="mt-3 leading-8 muted">ممثلين ومؤدين لأعمال درامية، مؤسسية، وسينمائية قصيرة.</p></article><article class="panel rounded-md p-5 text-right"><h3 class="display text-xl font-bold text-white">ترشيح صوتي</h3><p class="mt-3 leading-8 muted">خامات صوتية للإعلانات، الدبلجة، الرد الآلي، والتعليق.</p></article><article class="panel rounded-md p-5 text-right"><h3 class="display text-xl font-bold text-white">تنسيق عاجل</h3><p class="mt-3 leading-8 muted">للمشاريع القريبة التي تحتاج قائمة أولية بسرعة ووضوح.</p></article></div></div></section>
+    <!-- للمواهب -->
+    <section id="talents" class="section relative border-y line bg-gradient-to-b from-[#04102A] to-[#06122A]">
+      <div class="absolute inset-0 gridlines opacity-30"></div>
+      <div class="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+        <div class="text-right lg:col-span-5">
+          <div class="pill mb-5"><span class="dot"></span>للمواهب والوجوه</div>
+          <h2 class="display text-3xl font-black leading-tight text-white sm:text-4xl lg:text-[2.7rem]">
+            ملفك الفني يحتاج ترتيباً يسهّل ترشيحك.
+          </h2>
+          <p class="mt-5 text-lg leading-9 muted">
+            أرسل صورك، خبراتك، مدينتك، لهجتك، ومهاراتك. نرتب بياناتك داخلياً لنرشحك عندما يظهر طلب يناسبك.
+            بياناتك تبقى لدينا ولا تُعرض علناً.
+          </p>
+          <a data-wa="talent" href="#" class="mt-7 inline-flex rounded-xl btn-gold px-6 py-3 font-extrabold transition">ابدأ تسجيل موهبتك</a>
+        </div>
+        <div class="panel rounded-2xl p-7 text-right lg:col-span-7">
+          <h3 class="display text-2xl font-extrabold text-white">ما الذي نحتاجه منك؟</h3>
+          <p class="mt-2 muted">قائمة مختصرة، الجودة أهم من الكثرة.</p>
+          <div class="mt-6 grid gap-3 sm:grid-cols-2">
+            <div class="flex items-start gap-3 rounded-xl panel-soft p-4">
+              <span class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-[var(--gold)]/15 text-[var(--gold-2)] font-bold">١</span>
+              <span class="leading-7">صور واضحة وحديثة (وجه وكامل القامة)</span>
+            </div>
+            <div class="flex items-start gap-3 rounded-xl panel-soft p-4">
+              <span class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-[var(--gold)]/15 text-[var(--gold-2)] font-bold">٢</span>
+              <span class="leading-7">المدينة والعمر والطول التقريبي</span>
+            </div>
+            <div class="flex items-start gap-3 rounded-xl panel-soft p-4">
+              <span class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-[var(--gold)]/15 text-[var(--gold-2)] font-bold">٣</span>
+              <span class="leading-7">المهارات واللهجات والخبرات السابقة</span>
+            </div>
+            <div class="flex items-start gap-3 rounded-xl panel-soft p-4">
+              <span class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-[var(--gold)]/15 text-[var(--gold-2)] font-bold">٤</span>
+              <span class="leading-7">روابط أعمال أو مقاطع تعريفية</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <section id="talents" class="section border-y line bg-[#0A0D0C]"><div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8"><div class="text-right lg:col-span-5"><p class="text-sm font-bold text-[#CAA760]">للمواهب والوجوه</p><h2 class="display mt-3 text-3xl font-extrabold leading-tight text-white sm:text-4xl">ملفك الفني يحتاج ترتيباً يسهّل ترشيحك.</h2><p class="mt-4 text-lg leading-8 muted">أرسل صورك، خبراتك، مدينتك، لهجتك، ومهاراتك. نرتب بياناتك داخلياً لنرشحك عندما يظهر طلب يناسبك.</p><a data-wa="talent" href="#" class="mt-7 inline-flex rounded-md btn-main px-6 py-3 font-bold">ابدأ تسجيل موهبتك</a></div><div class="panel rounded-md p-6 text-right lg:col-span-7"><h3 class="display text-2xl font-bold text-white">ما الذي نحتاجه منك؟</h3><div class="mt-6 grid gap-3 sm:grid-cols-2"><div class="panel-soft rounded-md p-4">صور واضحة وحديثة</div><div class="panel-soft rounded-md p-4">المدينة والعمر والطول التقريبي</div><div class="panel-soft rounded-md p-4">المهارات واللهجات</div><div class="panel-soft rounded-md p-4">روابط أعمال أو مقاطع تعريفية</div></div></div></div></section>
+    <!-- الفئات -->
+    <section id="categories" class="section">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 flex flex-col justify-between gap-5 text-right lg:flex-row lg:items-end">
+          <div>
+            <div class="pill mb-5"><span class="dot"></span>فئات الترشيح</div>
+            <h2 class="display text-3xl font-black text-white sm:text-4xl lg:text-[2.7rem]">مواهب مناسبة لطبيعة السوق السعودي.</h2>
+            <p class="mt-3 max-w-2xl muted">قائمة الفئات الأكثر طلباً من شركات الإنتاج، الوكالات، والبراندات.</p>
+          </div>
+          <a data-wa="general" href="#" class="rounded-xl btn-gold px-6 py-3 text-center font-extrabold">استفسر عن فئة محددة</a>
+        </div>
+        <div id="categoryGrid" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+      </div>
+    </section>
 
-    <section id="categories" class="section"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><div class="mb-12 flex flex-col justify-between gap-5 text-right lg:flex-row lg:items-end"><div><p class="text-sm font-bold text-[#CAA760]">فئات الترشيح</p><h2 class="display mt-3 text-3xl font-extrabold text-white sm:text-4xl">مواهب مناسبة لطبيعة السوق السعودي.</h2></div><a data-wa="general" href="#" class="rounded-md border border-[#CAA760]/40 px-5 py-3 text-center font-bold text-[#CAA760] hover:bg-[#CAA760] hover:text-[#060807]">استفسر عن فئة محددة</a></div><div id="categoryGrid" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div></div></section>
+    <!-- اختيار الـ Brief -->
+    <section id="brief" class="section border-y line bg-[#04102A]">
+      <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+        <div class="text-right lg:col-span-5">
+          <div class="pill mb-5"><span class="dot"></span>اختيار ذكي قبل التواصل</div>
+          <h2 class="display text-3xl font-black text-white sm:text-4xl lg:text-[2.7rem]">اختر نوع طلبك، وسنجهز رسالة واتساب مناسبة.</h2>
+          <p class="mt-5 leading-9 muted">هذا يساعدنا نفهم نيتك من أول رسالة، ونبدأ معك بالطريقة الصحيحة وبدون لفّ.</p>
+        </div>
+        <div class="panel rounded-2xl p-6 text-right lg:col-span-7">
+          <div class="grid gap-3 sm:grid-cols-3">
+            <button class="brief rounded-xl btn-primary px-4 py-3 font-extrabold" data-type="casting">شركة أو وكالة</button>
+            <button class="brief rounded-xl btn-ghost px-4 py-3 font-bold" data-type="talent">تسجيل موهبة</button>
+            <button class="brief rounded-xl btn-ghost px-4 py-3 font-bold" data-type="urgent">طلب عاجل</button>
+          </div>
+          <div class="mt-5 rounded-xl border line bg-white/[.04] p-5">
+            <span class="text-xs font-extrabold uppercase tracking-[.22em] text-[var(--gold-2)]">نص الرسالة</span>
+            <p id="briefText" class="mt-3 min-h-20 leading-8 muted"></p>
+          </div>
+          <a id="briefLink" href="#" class="mt-4 inline-flex items-center gap-2 rounded-xl btn-wa px-6 py-3 font-extrabold">
+            <svg aria-hidden viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19.11 17.34c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.62.14-.18.27-.71.88-.87 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.41-2.16-1.31-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.62-1.49-.85-2.04-.22-.53-.45-.46-.62-.47l-.53-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.99 2.66 1.13 2.84.14.18 1.95 2.98 4.73 4.18.66.28 1.18.45 1.58.58.66.21 1.26.18 1.73.11.53-.08 1.6-.65 1.82-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.32zM12.02 2C6.49 2 2 6.49 2 12.02c0 1.93.55 3.72 1.5 5.24L2 22l4.86-1.46a9.95 9.95 0 0 0 5.16 1.43h.01c5.53 0 10.02-4.49 10.02-10.02 0-2.68-1.04-5.19-2.93-7.08A9.93 9.93 0 0 0 12.02 2z"/></svg>
+            <span>إرسال الرسالة عبر واتساب</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
-    <section id="brief" class="section border-y line bg-[#0A0D0C]"><div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-12 lg:px-8"><div class="text-right lg:col-span-5"><p class="text-sm font-bold text-[#CAA760]">اختيار ذكي قبل التواصل</p><h2 class="display mt-3 text-3xl font-extrabold text-white sm:text-4xl">اختر نوع طلبك، وسنجهز رسالة واتساب مناسبة.</h2><p class="mt-4 leading-8 muted">هذا يساعدنا نفهم نيتك من أول رسالة ونبدأ معك بالطريقة الصحيحة.</p></div><div class="panel rounded-md p-5 text-right lg:col-span-7"><div class="grid gap-3 sm:grid-cols-3"><button class="brief rounded-md btn-main px-4 py-3 font-bold" data-type="casting">شركة أو وكالة</button><button class="brief rounded-md border line px-4 py-3 font-bold text-white" data-type="talent">تسجيل موهبة</button><button class="brief rounded-md border line px-4 py-3 font-bold text-white" data-type="urgent">طلب عاجل</button></div><p id="briefText" class="mt-5 min-h-20 rounded-md bg-white/[.045] p-4 leading-8 muted">مرحباً، لدي مشروع وأرغب بطلب كاستنج من JA kcasting. هذه مواصفات الطلب: نوع المشروع، المدينة، العمر، اللهجة، موعد التصوير، والميزانية التقريبية.</p><a id="briefLink" href="#" class="mt-4 inline-flex rounded-md btn-main px-6 py-3 font-extrabold">إرسال الرسالة عبر واتساب</a></div></div></section>
+    <!-- آلية العمل -->
+    <section id="workflow" class="section">
+      <div class="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+        <div class="text-right lg:col-span-5">
+          <div class="pill mb-5"><span class="dot"></span>آلية العمل</div>
+          <h2 class="display text-3xl font-black leading-tight text-white sm:text-4xl lg:text-[2.7rem]">ثلاث خطوات، كلها واضحة على واتساب.</h2>
+          <p class="mt-5 text-lg leading-9 muted">نطلب التفاصيل المهمة فقط، ثم نحوّلها إلى قائمة ترشيح قابلة للتنفيذ.</p>
+        </div>
+        <div class="space-y-4 lg:col-span-7">
+          <div class="panel rounded-2xl p-6 text-right">
+            <div class="flex items-start justify-between gap-5">
+              <div>
+                <span class="text-xs font-extrabold uppercase tracking-[.22em] text-[var(--gold-2)]">الخطوة الأولى</span>
+                <h3 class="display mt-1 text-xl font-extrabold text-white">ترسل المواصفات</h3>
+                <p class="mt-2 leading-8 muted">الفئة، العمر، المدينة، اللهجة، موعد التصوير، والميزانية التقريبية.</p>
+              </div>
+              <span class="display num shrink-0 text-5xl font-black text-[var(--gold)]/40">01</span>
+            </div>
+          </div>
+          <div class="panel rounded-2xl p-6 text-right">
+            <div class="flex items-start justify-between gap-5">
+              <div>
+                <span class="text-xs font-extrabold uppercase tracking-[.22em] text-[var(--gold-2)]">الخطوة الثانية</span>
+                <h3 class="display mt-1 text-xl font-extrabold text-white">نفرز الخيارات</h3>
+                <p class="mt-2 leading-8 muted">نراجع الفئات المناسبة ونختصرها إلى أسماء قابلة للمراجعة.</p>
+              </div>
+              <span class="display num shrink-0 text-5xl font-black text-[var(--gold)]/40">02</span>
+            </div>
+          </div>
+          <div class="panel rounded-2xl p-6 text-right">
+            <div class="flex items-start justify-between gap-5">
+              <div>
+                <span class="text-xs font-extrabold uppercase tracking-[.22em] text-[var(--gold-2)]">الخطوة الثالثة</span>
+                <h3 class="display mt-1 text-xl font-extrabold text-white">نبدأ التنسيق</h3>
+                <p class="mt-2 leading-8 muted">بعد اختيارك، نرتب التواصل والتأكيدات الأساسية قبل التصوير.</p>
+              </div>
+              <span class="display num shrink-0 text-5xl font-black text-[var(--gold)]/40">03</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <section id="workflow" class="section"><div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8"><div class="text-right lg:col-span-5"><p class="text-sm font-bold text-[#CAA760]">آلية العمل</p><h2 class="display mt-3 text-3xl font-extrabold leading-tight text-white sm:text-4xl">ثلاث خطوات، كلها واضحة على واتساب.</h2><p class="mt-4 text-lg leading-8 muted">نطلب التفاصيل المهمة فقط، ثم نحولها إلى قائمة ترشيح قابلة للتنفيذ.</p></div><div class="space-y-4 lg:col-span-7"><div class="panel rounded-md p-5 text-right"><strong class="text-[#CAA760]">1. ترسل المواصفات</strong><p class="mt-2 leading-8 muted">الفئة، العمر، المدينة، اللهجة، موعد التصوير، والميزانية التقريبية.</p></div><div class="panel rounded-md p-5 text-right"><strong class="text-[#CAA760]">2. نفرز الخيارات</strong><p class="mt-2 leading-8 muted">نراجع الفئات المناسبة ونختصرها إلى أسماء قابلة للمراجعة.</p></div><div class="panel rounded-md p-5 text-right"><strong class="text-[#CAA760]">3. نبدأ التنسيق</strong><p class="mt-2 leading-8 muted">بعد اختيارك، نرتب التواصل والتأكيدات الأساسية قبل التصوير.</p></div></div></div></section>
+    <!-- أسئلة شائعة -->
+    <section id="faq" class="section border-t line">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 text-center">
+          <div class="pill mx-auto mb-5"><span class="dot"></span>قبل أن ترسل</div>
+          <h2 class="display text-3xl font-black text-white sm:text-4xl">أسئلة مختصرة</h2>
+        </div>
+        <div id="faqList" class="space-y-3"></div>
+      </div>
+    </section>
 
-    <section id="faq" class="section border-t line"><div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8"><div class="mb-10 text-center"><p class="text-sm font-bold text-[#CAA760]">قبل أن ترسل</p><h2 class="display mt-3 text-3xl font-extrabold text-white">أسئلة مختصرة</h2></div><div id="faqList" class="space-y-4"></div></div></section>
-    <section class="bg-[#0B6B4F] py-20"><div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8"><h2 class="display text-3xl font-extrabold leading-tight text-white sm:text-5xl">ابدأ برسالة واحدة، والباقي نرتبه معك.</h2><p class="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#dff4ea]">اختر مسارك وسيصلنا نص جاهز يساعدنا نفهم طلبك بسرعة.</p><div class="mt-8 grid gap-3 sm:grid-cols-3"><a data-wa="casting" href="#" class="rounded-md bg-white px-5 py-4 font-extrabold text-[#0B6B4F]">طلب كاستنج</a><a data-wa="talent" href="#" class="rounded-md border border-white/35 px-5 py-4 font-bold text-white">تسجيل موهبة</a><a data-wa="general" href="#" class="rounded-md border border-white/35 px-5 py-4 font-bold text-white">استفسار عام</a></div></div></section>
+    <!-- CTA النهائي -->
+    <section class="relative overflow-hidden bg-gradient-to-b from-[#0E3A8A] via-[#0B2E73] to-[#072154] py-24">
+      <div class="absolute inset-0 gridlines opacity-25"></div>
+      <div class="arabesque"></div>
+      <div class="relative mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+        <div class="pill mx-auto mb-6 border-white/30 bg-white/10 text-white"><span class="dot"></span>الخطوة التالية</div>
+        <h2 class="display text-3xl font-black leading-tight text-white sm:text-5xl">ابدأ برسالة واحدة، والباقي نرتبه معك.</h2>
+        <p class="mx-auto mt-5 max-w-2xl text-lg leading-9 text-[#D5E0F4]">اختر مسارك وسيصلنا نص جاهز يساعدنا نفهم طلبك بسرعة.</p>
+        <div class="mx-auto mt-9 grid max-w-3xl gap-3 sm:grid-cols-3">
+          <a data-wa="casting" href="#" class="rounded-xl btn-gold px-5 py-4 font-extrabold">طلب كاستنج</a>
+          <a data-wa="talent" href="#" class="rounded-xl bg-white px-5 py-4 font-extrabold text-[#0B2E73]">تسجيل موهبة</a>
+          <a data-wa="general" href="#" class="rounded-xl border border-white/40 bg-white/5 px-5 py-4 font-bold text-white">استفسار عام</a>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer class="border-t line bg-[#060807] py-10"><div class="mx-auto flex max-w-7xl flex-col gap-5 px-4 text-right sm:px-6 lg:px-8"><strong class="display text-2xl font-extrabold text-white">JA <span class="text-[#CAA760]">kcasting</span></strong><p class="max-w-2xl leading-8 muted">تنسيق كاستنج سعودي للبراندات وشركات الإنتاج والوكالات. التواصل والترشيح يتم عبر واتساب لضمان سرعة ووضوح أعلى.</p><a data-wa="general" href="#" class="text-xl font-extrabold text-[#18B977]">0533116166</a><p class="text-xs muted">© 2026 JA kcasting. جميع الحقوق محفوظة.</p></div></footer>
-  <a data-wa="general" href="#" class="fixed bottom-5 left-5 z-50 rounded-md btn-main px-5 py-3 text-sm font-extrabold shadow-[0_12px_32px_rgba(24,185,119,.32)] transition hover:-translate-y-0.5">واتساب</a>
+
+  <footer class="border-t line bg-[#04102A] py-12">
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+      <div class="text-right lg:col-span-6">
+        <div class="flex items-center gap-3">
+          <span class="display flex h-12 w-12 items-center justify-center rounded-lg border border-[var(--gold)]/40 bg-[#06122A] text-xl font-extrabold text-[var(--gold-2)]">JA</span>
+          <strong class="display text-2xl font-black text-white">JA <span class="text-[var(--gold-2)]">kcasting</span></strong>
+        </div>
+        <p class="mt-5 max-w-2xl leading-8 muted">تنسيق كاستنج سعودي للبراندات وشركات الإنتاج والوكالات. التواصل والترشيح يتم عبر واتساب لضمان سرعة ووضوح أعلى.</p>
+      </div>
+      <div class="text-right lg:col-span-3">
+        <h4 class="display text-sm font-extrabold uppercase tracking-[.22em] text-[var(--gold-2)]">روابط</h4>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a class="muted hover:text-white" href="#agencies">للشركات</a></li>
+          <li><a class="muted hover:text-white" href="#talents">للمواهب</a></li>
+          <li><a class="muted hover:text-white" href="#categories">الفئات</a></li>
+          <li><a class="muted hover:text-white" href="#workflow">آلية العمل</a></li>
+        </ul>
+      </div>
+      <div class="text-right lg:col-span-3">
+        <h4 class="display text-sm font-extrabold uppercase tracking-[.22em] text-[var(--gold-2)]">تواصل</h4>
+        <a data-wa="general" href="#" class="mt-4 inline-flex items-center gap-2 text-xl font-extrabold text-[var(--gold-2)] hover:text-white">
+          <svg aria-hidden viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19.11 17.34c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.62.14-.18.27-.71.88-.87 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.41-2.16-1.31-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.62-1.49-.85-2.04-.22-.53-.45-.46-.62-.47l-.53-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.99 2.66 1.13 2.84.14.18 1.95 2.98 4.73 4.18.66.28 1.18.45 1.58.58.66.21 1.26.18 1.73.11.53-.08 1.6-.65 1.82-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.32zM12.02 2C6.49 2 2 6.49 2 12.02c0 1.93.55 3.72 1.5 5.24L2 22l4.86-1.46a9.95 9.95 0 0 0 5.16 1.43h.01c5.53 0 10.02-4.49 10.02-10.02 0-2.68-1.04-5.19-2.93-7.08A9.93 9.93 0 0 0 12.02 2z"/></svg>
+          0533116166
+        </a>
+        <p class="mt-3 text-xs muted">السبت – الخميس · 9 ص – 9 م</p>
+      </div>
+      <div class="border-t line pt-6 text-xs muted lg:col-span-12 lg:flex lg:items-center lg:justify-between">
+        <span>© 2026 JA kcasting. جميع الحقوق محفوظة.</span>
+        <span class="mt-2 block lg:mt-0">صُمم وفق معايير الهوية البصرية السعودية الاحترافية.</span>
+      </div>
+    </div>
+  </footer>
+
+  <a data-wa="general" href="#" class="fixed bottom-5 left-5 z-50 inline-flex items-center gap-2 rounded-full btn-wa px-5 py-3 text-sm font-extrabold transition">
+    <svg aria-hidden viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19.11 17.34c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.62.14-.18.27-.71.88-.87 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.41-2.16-1.31-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.62-1.49-.85-2.04-.22-.53-.45-.46-.62-.47l-.53-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.99 2.66 1.13 2.84.14.18 1.95 2.98 4.73 4.18.66.28 1.18.45 1.58.58.66.21 1.26.18 1.73.11.53-.08 1.6-.65 1.82-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.32zM12.02 2C6.49 2 2 6.49 2 12.02c0 1.93.55 3.72 1.5 5.24L2 22l4.86-1.46a9.95 9.95 0 0 0 5.16 1.43h.01c5.53 0 10.02-4.49 10.02-10.02 0-2.68-1.04-5.19-2.93-7.08A9.93 9.93 0 0 0 12.02 2z"/></svg>
+    <span>واتساب</span>
+  </a>
+
   <script>
-    const number='966533116166'; const messages={casting:'مرحباً، لدي مشروع وأرغب بطلب كاستنج من JA kcasting. هذه مواصفات الطلب: نوع المشروع، المدينة، العمر، اللهجة، موعد التصوير، والميزانية التقريبية.',talent:'مرحباً، أرغب بالتسجيل كموهبة في JA kcasting. أريد إرسال بياناتي وصوري ومهاراتي للترشيحات القادمة.',urgent:'مرحباً، لدي طلب كاستنج عاجل وأحتاج ترشيحات مناسبة في أسرع وقت. أرجو التواصل معي.',general:'مرحباً، أرغب بالاستفسار عن خدمات JA kcasting والتنسيق عبر واتساب.'};
-    function waUrl(key){return `https://wa.me/${number}?text=${encodeURIComponent(messages[key])}`}
-    document.querySelectorAll('[data-wa]').forEach(el=>{const key=el.dataset.wa;el.href=waUrl(key);el.target='_blank';el.rel='noopener noreferrer'});
-    const categories=[['ممثلين وممثلات','للأعمال الدرامية، الإعلانات، والمشاهد القصيرة.'],['وجوه إعلانية','حضور مناسب للكاميرا والبراندات والحملات.'],['مودلز تصوير','منتجات، أزياء، لايف ستايل، وجلسات فوتوغرافية.'],['مؤدين صوتيين','إعلانات، دبلجة، رد آلي، ولهجات سعودية.'],['صناع محتوى','تقديم رقمي وظهور اجتماعي للحملات.'],['مقدمي فعاليات','مؤتمرات، إطلاقات، ندوات، وبرامج.']];
-    document.getElementById('categoryGrid').innerHTML=categories.map(([title,text])=>`<article class="panel rounded-md p-5 text-right transition hover:border-[#CAA760]/45"><h3 class="display text-xl font-bold text-white">${title}</h3><p class="mt-3 leading-8 muted">${text}</p><a class="mt-5 inline-flex rounded-md border line px-4 py-2 text-sm font-bold text-white hover:bg-white/10" target="_blank" rel="noopener noreferrer" href="https://wa.me/${number}?text=${encodeURIComponent('مرحباً، أريد الاستفسار عن فئة: '+title)}">استفسر عن الفئة</a></article>`).join('');
-    const briefText=document.getElementById('briefText'); const briefLink=document.getElementById('briefLink'); function setBrief(type){briefText.textContent=messages[type];briefLink.href=waUrl(type);document.querySelectorAll('.brief').forEach(btn=>{btn.className='brief rounded-md border line px-4 py-3 font-bold text-white'});document.querySelector(`.brief[data-type="${type}"]`).className='brief rounded-md btn-main px-4 py-3 font-bold'} briefLink.href=waUrl('casting'); document.querySelectorAll('.brief').forEach(btn=>btn.addEventListener('click',()=>setBrief(btn.dataset.type)));
-    const faqs=[['ما أسرع طريقة لطلب كاستنج؟','اضغط زر طلب كاستنج وأرسل المدينة، الفئة، العمر، اللهجة، موعد التصوير، والميزانية التقريبية.'],['هل تسجيل المواهب مجاني؟','يمكن للموهبة إرسال بياناتها وصورها ومهاراتها عبر واتساب للمراجعة والتنظيم.'],['هل تعرضون بيانات المواهب علناً؟','لا. الترشيحات والملفات تعامل بخصوصية ولا تشارك إلا عند وجود طلب مناسب وجاد.'],['هل يمكن طلب ترشيح عاجل؟','نعم. كلما كانت المواصفات أوضح، كان الفرز أسرع وأسهل للتنفيذ.']];
-    document.getElementById('faqList').innerHTML=faqs.map(([q,a])=>`<details class="panel rounded-md p-5 text-right"><summary class="cursor-pointer list-none display text-lg font-bold text-white">${q}</summary><p class="mt-4 leading-8 muted">${a}</p></details>`).join('');
+    const number = '966533116166';
+    const messages = {
+      casting: 'مرحباً، لدي مشروع وأرغب بطلب كاستنج من JA kcasting. هذه مواصفات الطلب: نوع المشروع، المدينة، العمر، اللهجة، موعد التصوير، والميزانية التقريبية.',
+      talent: 'مرحباً، أرغب بالتسجيل كموهبة في JA kcasting. أريد إرسال بياناتي وصوري ومهاراتي للترشيحات القادمة.',
+      urgent: 'مرحباً، لدي طلب كاستنج عاجل وأحتاج ترشيحات مناسبة في أسرع وقت. أرجو التواصل معي.',
+      general: 'مرحباً، أرغب بالاستفسار عن خدمات JA kcasting والتنسيق عبر واتساب.'
+    };
+    const waUrl = (key) => `https://wa.me/${number}?text=${encodeURIComponent(messages[key])}`;
+    document.querySelectorAll('[data-wa]').forEach(el => {
+      el.href = waUrl(el.dataset.wa);
+      el.target = '_blank';
+      el.rel = 'noopener noreferrer';
+    });
+
+    const categories = [
+      ['ممثلين وممثلات', 'للأعمال الدرامية، الإعلانات، والمشاهد القصيرة.', '◆'],
+      ['وجوه إعلانية', 'حضور مناسب للكاميرا والبراندات والحملات.', '✦'],
+      ['مودلز تصوير', 'منتجات، أزياء، لايف ستايل، وجلسات فوتوغرافية.', '✧'],
+      ['مؤدين صوتيين', 'إعلانات، دبلجة، رد آلي، ولهجات سعودية.', '♫'],
+      ['صناع محتوى', 'تقديم رقمي وظهور اجتماعي للحملات.', '▶'],
+      ['مقدمي فعاليات', 'مؤتمرات، إطلاقات، ندوات، وبرامج.', '★']
+    ];
+    document.getElementById('categoryGrid').innerHTML = categories.map(([title, text, icon]) => `
+      <article class="panel rounded-2xl p-6 text-right transition hover:border-[var(--gold)]/45 hover:-translate-y-0.5">
+        <div class="flex items-start justify-between">
+          <span class="flex h-11 w-11 items-center justify-center rounded-lg bg-[var(--blue)]/15 text-lg text-[var(--blue-2)] ring-1 ring-[var(--blue)]/35">${icon}</span>
+          <span class="text-xs font-extrabold uppercase tracking-[.22em] text-[var(--gold-2)]">فئة</span>
+        </div>
+        <h3 class="display mt-4 text-xl font-extrabold text-white">${title}</h3>
+        <p class="mt-3 leading-8 muted">${text}</p>
+        <a class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-[var(--gold-2)] hover:text-white" target="_blank" rel="noopener noreferrer" href="https://wa.me/${number}?text=${encodeURIComponent('مرحباً، أريد الاستفسار عن فئة: ' + title)}">
+          <span>استفسر عن الفئة</span>
+          <span aria-hidden>←</span>
+        </a>
+      </article>
+    `).join('');
+
+    const briefText = document.getElementById('briefText');
+    const briefLink = document.getElementById('briefLink');
+    function setBrief(type) {
+      briefText.textContent = messages[type];
+      briefLink.href = waUrl(type);
+      document.querySelectorAll('.brief').forEach(btn => {
+        btn.className = 'brief rounded-xl btn-ghost px-4 py-3 font-bold';
+      });
+      document.querySelector(`.brief[data-type="${type}"]`).className = 'brief rounded-xl btn-primary px-4 py-3 font-extrabold';
+    }
+    setBrief('casting');
+    document.querySelectorAll('.brief').forEach(btn => btn.addEventListener('click', () => setBrief(btn.dataset.type)));
+
+    const faqs = [
+      ['ما أسرع طريقة لطلب كاستنج؟', 'اضغط زر "أرسل طلب كاستنج" وأرسل: المدينة، الفئة، العمر، اللهجة، موعد التصوير، والميزانية التقريبية.'],
+      ['هل تسجيل المواهب مجاني؟', 'نعم. يمكن للموهبة إرسال بياناتها وصورها ومهاراتها عبر واتساب للمراجعة والتنظيم داخلياً.'],
+      ['هل تعرضون بيانات المواهب علناً؟', 'لا. الترشيحات والملفات تعامل بسرّية كاملة، ولا تشارك إلا عند وجود طلب مناسب وجاد.'],
+      ['هل يمكن طلب ترشيح عاجل؟', 'نعم. كلما كانت المواصفات أوضح، كان الفرز أسرع وأسهل للتنفيذ.'],
+      ['في أي مدن تعملون؟', 'الرياض، جدة، الدمام، والمنطقة الشرقية، مع إمكانية تنسيق مواهب من باقي المناطق حسب المشروع.']
+    ];
+    document.getElementById('faqList').innerHTML = faqs.map(([q, a]) => `
+      <details class="panel rounded-xl p-5 text-right">
+        <summary class="flex cursor-pointer items-center justify-between gap-4 list-none">
+          <span class="display text-lg font-extrabold text-white">${q}</span>
+          <span class="chev flex h-7 w-7 items-center justify-center rounded-full border border-[var(--gold)]/40 text-[var(--gold-2)]">▾</span>
+        </summary>
+        <p class="mt-4 leading-8 muted">${a}</p>
+      </details>
+    `).join('');
   </script>
 </body>
 </html>
