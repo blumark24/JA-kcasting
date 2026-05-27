@@ -1,1 +1,6 @@
-# smart-hsr-api-new
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
