@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>موك أب 3 — أزرق فاتح عصري (SaaS / Editorial)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#FBFDFF;
+    --ink:#0A1F44;
+    --ink-2:#1F3A6B;
+    --muted:#647693;
+    --line:#E6EEFB;
+    --line-2:#D2DFF3;
+    --blue:#3D7FFC;
+    --blue-2:#2A5FDB;
+    --blue-soft:#EBF2FE;
+    --sky:#7CB4FF;
+    --sky-soft:#DBE9FF;
+    --accent:#F3F7FE;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Almarai","Tajawal",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.display{font-family:"Tajawal",system-ui,sans-serif;letter-spacing:-0.025em}
+  .muted{color:var(--muted)}
+  .line{border-color:var(--line)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 1px 2px rgba(10,31,68,.04)}
+  .btn-primary{background:var(--ink);color:#fff;border-radius:999px;padding:.9rem 1.7rem;font-weight:800;display:inline-flex;align-items:center;gap:.5rem;transition:.2s}
+  .btn-primary:hover{background:var(--blue-2);transform:translateY(-1px);box-shadow:0 14px 28px -12px rgba(42,95,219,.5)}
+  .btn-blue{background:var(--blue);color:#fff;border-radius:999px;padding:.9rem 1.7rem;font-weight:800;display:inline-flex;align-items:center;gap:.5rem;box-shadow:0 12px 28px -12px rgba(61,127,252,.55)}
+  .btn-blue:hover{background:var(--blue-2);transform:translateY(-1px)}
+  .btn-ghost{background:#fff;color:var(--ink);border:1.5px solid var(--ink);border-radius:999px;padding:.9rem 1.7rem;font-weight:800}
+  .btn-ghost:hover{background:var(--ink);color:#fff}
+  .pill{display:inline-flex;align-items:center;gap:.55rem;padding:.4rem .9rem;border-radius:999px;background:#fff;color:var(--ink);font-size:.78rem;font-weight:800;border:1px solid var(--line-2)}
+  .dot{width:7px;height:7px;border-radius:999px;background:var(--blue);box-shadow:0 0 0 3px var(--sky-soft)}
+  .num{font-variant-numeric:tabular-nums;font-family:"Tajawal",system-ui,sans-serif}
+  .blob-1{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,var(--sky-soft),transparent 70%);filter:blur(20px);top:-160px;right:-120px;pointer-events:none}
+  .blob-2{position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,var(--blue-soft),transparent 70%);filter:blur(30px);bottom:-180px;left:-80px;pointer-events:none}
+  .underline-blue{background:linear-gradient(180deg,transparent 65%,var(--sky-soft) 65%);padding:0 .15em}
+  :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:999px}
+</style>
+</head>
+<body>
+
+<!-- هيدر -->
+<header class="sticky top-0 z-50 border-b line bg-white/85 backdrop-blur">
+  <div class="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-5">
+    <a class="flex items-center gap-3">
+      <span class="display flex h-10 w-10 items-center justify-center rounded-full bg-[var(--ink)] text-sm font-extrabold text-white">JA</span>
+      <strong class="display text-base font-extrabold text-[var(--ink)]">JA kcasting</strong>
+    </a>
+    <nav class="hidden items-center gap-7 text-sm font-bold text-[var(--ink-2)] md:flex">
+      <a class="hover:text-[var(--blue)]">للشركات</a>
+      <a class="hover:text-[var(--blue)]">للمواهب</a>
+      <a class="hover:text-[var(--blue)]">الفئات</a>
+      <a class="hover:text-[var(--blue)]">آلية العمل</a>
+    </nav>
+    <a class="btn-blue text-sm">واتساب ↙</a>
+  </div>
+</header>
+
+<!-- البطل -->
+<section class="relative overflow-hidden">
+  <div class="blob-1"></div>
+  <div class="blob-2"></div>
+  <div class="relative mx-auto max-w-6xl px-5 pb-16 pt-20 text-right">
+    <div class="mx-auto flex flex-col items-center text-center">
+      <div class="pill mb-7"><span class="dot"></span>كاستنج سعودي · منذ 2024</div>
+      <h1 class="display max-w-4xl text-5xl font-black leading-[1.12] text-[var(--ink)] sm:text-6xl lg:text-[5rem]">
+        وجوه مناسبة،
+        <span class="text-[var(--blue)]">ترشيح مختصر،</span>
+        <br/>
+        تنفيذ <span class="underline-blue">أسرع</span>.
+      </h1>
+      <p class="mt-7 max-w-2xl text-lg leading-9 muted">
+        مكتب تنسيق كاستنج سعودي يربط شركات الإنتاج والوكالات والبراندات
+        بمواهب جاهزة عبر واتساب — بدون فوضى قروبات أو بحث مفتوح.
+      </p>
+      <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
+        <a class="btn-primary">أرسل طلب كاستنج</a>
+        <a class="btn-ghost">سجّل كموهبة</a>
+      </div>
+      <div class="mt-12 flex items-center gap-6 text-sm muted">
+        <div class="flex -space-x-2 space-x-reverse">
+          <span class="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[var(--sky)] text-xs font-bold text-white">١</span>
+          <span class="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[var(--blue)] text-xs font-bold text-white">٢</span>
+          <span class="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[var(--blue-2)] text-xs font-bold text-white">٣</span>
+          <span class="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[var(--ink)] text-xs font-bold text-white">+</span>
+        </div>
+        <span>تنسيق لأكثر من <strong class="text-[var(--ink)]">+6 فئات</strong> مختلفة</span>
+      </div>
+    </div>
+
+    <!-- شريط بطاقات سفلية -->
+    <div class="mt-20 grid gap-4 sm:grid-cols-3">
+      <div class="card p-6 text-right">
+        <span class="text-2xl">⚡</span>
+        <h3 class="display mt-3 text-lg font-extrabold">ردّ خلال 24 ساعة</h3>
+        <p class="mt-2 text-sm leading-7 muted">إيقاع تواصل افتراضي بعد استلام الطلب.</p>
+      </div>
+      <div class="card p-6 text-right">
+        <span class="text-2xl">🔒</span>
+        <h3 class="display mt-3 text-lg font-extrabold">سرّية كاملة</h3>
+        <p class="mt-2 text-sm leading-7 muted">الملفات لا تُعرض علناً ولا تُشارك إلا عند طلب جاد.</p>
+      </div>
+      <div class="card p-6 text-right">
+        <span class="text-2xl">📲</span>
+        <h3 class="display mt-3 text-lg font-extrabold">تنسيق عبر واتساب</h3>
+        <p class="mt-2 text-sm leading-7 muted">من أول رسالة إلى التأكيد قبل التصوير.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- الفئات -->
+<section class="py-24">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="mb-12 flex flex-col items-end justify-between gap-5 text-right sm:flex-row sm:items-end">
+      <div>
+        <div class="pill mb-4"><span class="dot"></span>الفئات</div>
+        <h2 class="display text-4xl font-black sm:text-5xl">
+          مواهب مناسبة <span class="text-[var(--blue)]">لسوقك</span>.
+        </h2>
+      </div>
+      <p class="max-w-md muted">قائمة الفئات الأكثر طلباً من شركات الإنتاج والوكالات والبراندات.</p>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <article class="card group p-7 text-right transition hover:-translate-y-1 hover:border-[var(--blue)]">
+        <div class="flex items-start justify-between">
+          <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--blue-soft)] text-xl text-[var(--blue-2)] transition group-hover:bg-[var(--blue)] group-hover:text-white">◆</span>
+          <span class="text-xs font-bold text-[var(--muted)]">01</span>
+        </div>
+        <h3 class="display mt-5 text-xl font-extrabold">ممثلين وممثلات</h3>
+        <p class="mt-2 leading-7 muted">للأعمال الدرامية، الإعلانات، والمشاهد القصيرة.</p>
+      </article>
+      <article class="card group p-7 text-right transition hover:-translate-y-1 hover:border-[var(--blue)]">
+        <div class="flex items-start justify-between">
+          <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--blue-soft)] text-xl text-[var(--blue-2)] transition group-hover:bg-[var(--blue)] group-hover:text-white">✦</span>
+          <span class="text-xs font-bold text-[var(--muted)]">02</span>
+        </div>
+        <h3 class="display mt-5 text-xl font-extrabold">وجوه إعلانية</h3>
+        <p class="mt-2 leading-7 muted">حضور مناسب للكاميرا والبراندات والحملات.</p>
+      </article>
+      <article class="card group p-7 text-right transition hover:-translate-y-1 hover:border-[var(--blue)]">
+        <div class="flex items-start justify-between">
+          <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--blue-soft)] text-xl text-[var(--blue-2)] transition group-hover:bg-[var(--blue)] group-hover:text-white">✧</span>
+          <span class="text-xs font-bold text-[var(--muted)]">03</span>
+        </div>
+        <h3 class="display mt-5 text-xl font-extrabold">مودلز تصوير</h3>
+        <p class="mt-2 leading-7 muted">منتجات، أزياء، لايف ستايل، وجلسات فوتوغرافية.</p>
+      </article>
+      <article class="card group p-7 text-right transition hover:-translate-y-1 hover:border-[var(--blue)]">
+        <div class="flex items-start justify-between">
+          <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--blue-soft)] text-xl text-[var(--blue-2)] transition group-hover:bg-[var(--blue)] group-hover:text-white">♫</span>
+          <span class="text-xs font-bold text-[var(--muted)]">04</span>
+        </div>
+        <h3 class="display mt-5 text-xl font-extrabold">مؤدين صوتيين</h3>
+        <p class="mt-2 leading-7 muted">إعلانات، دبلجة، رد آلي، ولهجات سعودية.</p>
+      </article>
+      <article class="card group p-7 text-right transition hover:-translate-y-1 hover:border-[var(--blue)]">
+        <div class="flex items-start justify-between">
+          <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--blue-soft)] text-xl text-[var(--blue-2)] transition group-hover:bg-[var(--blue)] group-hover:text-white">▶</span>
+          <span class="text-xs font-bold text-[var(--muted)]">05</span>
+        </div>
+        <h3 class="display mt-5 text-xl font-extrabold">صناع محتوى</h3>
+        <p class="mt-2 leading-7 muted">تقديم رقمي وظهور اجتماعي للحملات.</p>
+      </article>
+      <article class="card group p-7 text-right transition hover:-translate-y-1 hover:border-[var(--blue)]">
+        <div class="flex items-start justify-between">
+          <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--blue-soft)] text-xl text-[var(--blue-2)] transition group-hover:bg-[var(--blue)] group-hover:text-white">★</span>
+          <span class="text-xs font-bold text-[var(--muted)]">06</span>
+        </div>
+        <h3 class="display mt-5 text-xl font-extrabold">مقدمي فعاليات</h3>
+        <p class="mt-2 leading-7 muted">مؤتمرات، إطلاقات، ندوات، وبرامج.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-[var(--blue)] to-[var(--blue-2)] p-12 text-center text-white sm:p-16">
+      <div class="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-white/10 blur-2xl"></div>
+      <div class="absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-white/10 blur-2xl"></div>
+      <div class="relative">
+        <div class="pill mx-auto mb-6 border-white/30 bg-white/10 text-white"><span class="dot" style="background:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.25)"></span>الخطوة التالية</div>
+        <h2 class="display text-4xl font-black leading-tight sm:text-5xl">ابدأ برسالة واحدة، والباقي نرتبه معك.</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-lg text-white/85">اختر مسارك وسيصلنا نص جاهز يساعدنا نفهم طلبك بسرعة.</p>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a class="rounded-full bg-white px-7 py-4 font-extrabold text-[var(--blue-2)]">طلب كاستنج</a>
+          <a class="rounded-full border border-white/40 bg-white/10 px-7 py-4 font-bold text-white">تسجيل موهبة</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="border-t line bg-white py-8">
+  <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-5 text-sm muted sm:flex-row">
+    <span>© 2026 JA kcasting</span>
+    <a class="font-bold text-[var(--blue)]">0533116166</a>
+  </div>
+</footer>
+
+<div class="fixed bottom-5 left-5 z-50 rounded-full bg-[var(--ink)] px-4 py-2 text-xs font-bold text-white shadow-lg">
+  Mock #3 · أزرق فاتح عصري
+</div>
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>موك أب 2 — أزرق سعودي مؤسسي (بنكي/حكومي عصري)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#F4F8FE;
+    --bg-2:#FFFFFF;
+    --ink:#0E2A52;
+    --ink-2:#23457B;
+    --muted:#56709A;
+    --line:#D9E5F5;
+    --line-2:#C6D5EB;
+    --blue:#1A6DD8;
+    --blue-2:#0E4FAB;
+    --blue-soft:#E1ECFC;
+    --blue-3:#3F8CF0;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans Arabic","Cairo",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.display{font-family:"Cairo",system-ui,sans-serif;letter-spacing:-0.02em}
+  .muted{color:var(--muted)}
+  .line{border-color:var(--line)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 1px 2px rgba(14,42,82,.05)}
+  .stripe{background:linear-gradient(180deg,#fff 0%,#F4F8FE 100%)}
+  .btn-primary{background:linear-gradient(180deg,var(--blue-3),var(--blue));color:#fff;border-radius:12px;padding:.9rem 1.6rem;font-weight:800;display:inline-flex;align-items:center;gap:.5rem;box-shadow:0 12px 28px -12px rgba(26,109,216,.6)}
+  .btn-primary:hover{filter:brightness(1.05);transform:translateY(-1px)}
+  .btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line-2);border-radius:12px;padding:.9rem 1.6rem;font-weight:700}
+  .btn-ghost:hover{background:var(--blue-soft)}
+  .pill{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .9rem;border-radius:999px;background:#fff;color:var(--blue-2);font-size:.8rem;font-weight:800;border:1px solid var(--blue-soft);box-shadow:0 4px 12px -6px rgba(26,109,216,.25)}
+  .dot{width:6px;height:6px;border-radius:999px;background:var(--blue)}
+  .hero-wave{
+    position:absolute;inset:auto 0 0 0;height:120px;pointer-events:none;
+    background:linear-gradient(180deg,transparent,var(--bg));
+  }
+  .hero-bg{
+    background:
+      radial-gradient(700px 350px at 90% 10%,rgba(26,109,216,.20),transparent 60%),
+      radial-gradient(900px 400px at -10% 30%,rgba(63,140,240,.16),transparent 60%),
+      linear-gradient(180deg,#EAF2FD 0%,#F4F8FE 100%);
+  }
+  .num{font-variant-numeric:tabular-nums;font-family:"Cairo",system-ui,sans-serif}
+  :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:8px}
+</style>
+</head>
+<body>
+
+<!-- شريط علوي -->
+<div class="border-b line bg-white">
+  <div class="mx-auto flex h-9 max-w-6xl items-center justify-between px-5 text-xs muted">
+    <span>📍 الرياض · جدة · الدمام</span>
+    <span class="font-bold text-[var(--blue-2)]">+966 53 311 6166</span>
+  </div>
+</div>
+
+<!-- هيدر -->
+<header class="sticky top-0 z-50 border-b line bg-white/90 backdrop-blur">
+  <div class="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-5">
+    <a class="flex items-center gap-3">
+      <span class="display flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--blue-3)] to-[var(--blue-2)] text-base font-extrabold text-white shadow-md">JA</span>
+      <span class="leading-tight">
+        <strong class="display block text-base font-extrabold text-[var(--ink)]">JA kcasting</strong>
+        <small class="block text-[10px] font-bold tracking-[.18em] text-[var(--blue-2)]">SAUDI CASTING OFFICE</small>
+      </span>
+    </a>
+    <nav class="hidden items-center gap-8 text-sm font-semibold text-[var(--ink-2)] md:flex">
+      <a class="hover:text-[var(--blue-2)]">للشركات</a>
+      <a class="hover:text-[var(--blue-2)]">للمواهب</a>
+      <a class="hover:text-[var(--blue-2)]">الفئات</a>
+      <a class="hover:text-[var(--blue-2)]">آلية العمل</a>
+    </nav>
+    <a class="btn-primary text-sm">واتساب مباشر</a>
+  </div>
+</header>
+
+<!-- البطل -->
+<section class="relative overflow-hidden hero-bg pb-32 pt-20">
+  <div class="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-5 lg:grid-cols-12">
+    <div class="text-right lg:col-span-7">
+      <div class="pill mb-6"><span class="dot"></span>كاستنج سعودي بمعايير عالمية</div>
+      <h1 class="display text-4xl font-black leading-[1.15] text-[var(--ink)] sm:text-6xl lg:text-[4.4rem]">
+        وجوه مناسبة.
+        <span class="block bg-gradient-to-l from-[var(--blue-3)] to-[var(--blue-2)] bg-clip-text text-transparent">ترشيح مختصر. تنفيذ أسرع.</span>
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg leading-9 muted">
+        مكتب تنسيق كاستنج سعودي يربط شركات الإنتاج والوكالات والبراندات بمواهب جاهزة:
+        ممثلين، وجوه إعلانية، مودلز، مؤدين صوتيين، وصناع محتوى — عبر واتساب.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a class="btn-primary">أرسل طلب كاستنج</a>
+        <a class="btn-ghost">سجّل كموهبة</a>
+      </div>
+      <div class="mt-10 grid gap-3 sm:grid-cols-3">
+        <div class="card p-3 text-center text-xs font-bold text-[var(--ink-2)]">سرية كاملة للملفات</div>
+        <div class="card p-3 text-center text-xs font-bold text-[var(--ink-2)]">فرز دقيق حسب المشروع</div>
+        <div class="card p-3 text-center text-xs font-bold text-[var(--ink-2)]">واتساب من أول خطوة</div>
+      </div>
+    </div>
+
+    <!-- كرت Brief -->
+    <div class="lg:col-span-5">
+      <div class="card relative p-6">
+        <div class="absolute -right-3 -top-3 rounded-full bg-[var(--blue)] px-3 py-1 text-[10px] font-extrabold tracking-wider text-white">LIVE</div>
+        <div class="flex items-center justify-between border-b line pb-4">
+          <div class="text-right">
+            <p class="text-[11px] font-extrabold uppercase tracking-[.22em] text-[var(--blue-2)]">Casting Brief</p>
+            <h2 class="display mt-2 text-xl font-extrabold">نموذج طلب جاهز للفرز</h2>
+          </div>
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--blue-soft)] text-xl">📋</div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 py-5 text-right text-sm">
+          <div class="rounded-xl bg-[var(--bg)] p-4"><span class="block text-xs muted">المشروع</span><strong class="mt-1 block">إعلان تجاري</strong></div>
+          <div class="rounded-xl bg-[var(--bg)] p-4"><span class="block text-xs muted">الفئة</span><strong class="mt-1 block">وجه إعلاني</strong></div>
+          <div class="rounded-xl bg-[var(--bg)] p-4"><span class="block text-xs muted">النطاق</span><strong class="mt-1 block">الرياض/جدة</strong></div>
+          <div class="rounded-xl bg-[var(--bg)] p-4"><span class="block text-xs muted">اللهجة</span><strong class="mt-1 block">سعودية بيضاء</strong></div>
+        </div>
+        <div class="rounded-xl bg-gradient-to-br from-[var(--blue-3)] to-[var(--blue-2)] p-4 text-right text-white">
+          <span class="text-xs font-extrabold uppercase tracking-[.22em] opacity-90">مخرجات الترشيح</span>
+          <div class="mt-2 flex items-end justify-between">
+            <strong class="display num text-4xl font-black">14</strong>
+            <p class="pb-1 text-sm opacity-90">بروفايل · 24 ساعة</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-wave"></div>
+</section>
+
+<!-- شريط الشركاء -->
+<section class="-mt-16 relative z-10">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="card grid grid-cols-2 divide-x divide-y divide-[var(--line)] md:grid-cols-4 md:divide-y-0">
+      <div class="p-6 text-right">
+        <strong class="display num block text-3xl font-black text-[var(--blue)]">100%</strong>
+        <span class="text-sm muted">تحويل لواتساب</span>
+      </div>
+      <div class="p-6 text-right">
+        <strong class="display num block text-3xl font-black text-[var(--ink)]">+6</strong>
+        <span class="text-sm muted">فئات ترشيح</span>
+      </div>
+      <div class="p-6 text-right">
+        <strong class="display num block text-3xl font-black text-[var(--ink)]">24h</strong>
+        <span class="text-sm muted">إيقاع الرد</span>
+      </div>
+      <div class="p-6 text-right">
+        <strong class="display block text-3xl font-black text-[var(--ink)]">خاص</strong>
+        <span class="text-sm muted">بدون عرض علني</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- الفئات -->
+<section class="py-20">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="mb-12 text-right">
+      <div class="pill mb-4"><span class="dot"></span>فئات الترشيح</div>
+      <h2 class="display text-3xl font-black sm:text-4xl">مواهب مناسبة لطبيعة السوق السعودي</h2>
+      <p class="mt-3 max-w-2xl muted">قائمة الفئات الأكثر طلباً من شركات الإنتاج والوكالات والبراندات.</p>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <article class="card p-6 text-right transition hover:-translate-y-1 hover:border-[var(--blue)]/40 hover:shadow-lg">
+        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--blue-3)] to-[var(--blue-2)] text-lg text-white">◆</span>
+        <h3 class="display mt-4 text-lg font-extrabold">ممثلين وممثلات</h3>
+        <p class="mt-2 text-sm leading-7 muted">للأعمال الدرامية، الإعلانات، والمشاهد القصيرة.</p>
+        <a class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[var(--blue-2)]">استفسر ←</a>
+      </article>
+      <article class="card p-6 text-right transition hover:-translate-y-1 hover:border-[var(--blue)]/40 hover:shadow-lg">
+        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--blue-3)] to-[var(--blue-2)] text-lg text-white">✦</span>
+        <h3 class="display mt-4 text-lg font-extrabold">وجوه إعلانية</h3>
+        <p class="mt-2 text-sm leading-7 muted">حضور مناسب للكاميرا والبراندات والحملات.</p>
+        <a class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[var(--blue-2)]">استفسر ←</a>
+      </article>
+      <article class="card p-6 text-right transition hover:-translate-y-1 hover:border-[var(--blue)]/40 hover:shadow-lg">
+        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--blue-3)] to-[var(--blue-2)] text-lg text-white">✧</span>
+        <h3 class="display mt-4 text-lg font-extrabold">مودلز تصوير</h3>
+        <p class="mt-2 text-sm leading-7 muted">منتجات، أزياء، لايف ستايل، وجلسات فوتوغرافية.</p>
+        <a class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[var(--blue-2)]">استفسر ←</a>
+      </article>
+      <article class="card p-6 text-right transition hover:-translate-y-1 hover:border-[var(--blue)]/40 hover:shadow-lg">
+        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--blue-3)] to-[var(--blue-2)] text-lg text-white">♫</span>
+        <h3 class="display mt-4 text-lg font-extrabold">مؤدين صوتيين</h3>
+        <p class="mt-2 text-sm leading-7 muted">إعلانات، دبلجة، رد آلي، ولهجات سعودية.</p>
+        <a class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[var(--blue-2)]">استفسر ←</a>
+      </article>
+      <article class="card p-6 text-right transition hover:-translate-y-1 hover:border-[var(--blue)]/40 hover:shadow-lg">
+        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--blue-3)] to-[var(--blue-2)] text-lg text-white">▶</span>
+        <h3 class="display mt-4 text-lg font-extrabold">صناع محتوى</h3>
+        <p class="mt-2 text-sm leading-7 muted">تقديم رقمي وظهور اجتماعي للحملات.</p>
+        <a class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[var(--blue-2)]">استفسر ←</a>
+      </article>
+      <article class="card p-6 text-right transition hover:-translate-y-1 hover:border-[var(--blue)]/40 hover:shadow-lg">
+        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--blue-3)] to-[var(--blue-2)] text-lg text-white">★</span>
+        <h3 class="display mt-4 text-lg font-extrabold">مقدمي فعاليات</h3>
+        <p class="mt-2 text-sm leading-7 muted">مؤتمرات، إطلاقات، ندوات، وبرامج.</p>
+        <a class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[var(--blue-2)]">استفسر ←</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-gradient-to-br from-[var(--blue-2)] via-[var(--blue)] to-[var(--blue-3)] py-20">
+  <div class="mx-auto max-w-4xl px-5 text-center">
+    <div class="pill mx-auto mb-6 border-white/40 bg-white/10 text-white"><span class="dot" style="background:#fff"></span>الخطوة التالية</div>
+    <h2 class="display text-3xl font-black leading-tight text-white sm:text-5xl">ابدأ برسالة واحدة، والباقي نرتبه معك.</h2>
+    <p class="mx-auto mt-4 max-w-2xl text-lg text-[#D5E5FB]">اختر مسارك وسيصلنا نص جاهز يساعدنا نفهم طلبك بسرعة.</p>
+    <div class="mx-auto mt-8 grid max-w-2xl gap-3 sm:grid-cols-3">
+      <a class="rounded-xl bg-white px-5 py-4 font-extrabold text-[var(--blue-2)]">طلب كاستنج</a>
+      <a class="rounded-xl border border-white/40 bg-white/10 px-5 py-4 font-bold text-white">تسجيل موهبة</a>
+      <a class="rounded-xl border border-white/40 bg-white/10 px-5 py-4 font-bold text-white">استفسار عام</a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-white py-8">
+  <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 border-t line px-5 pt-8 text-sm muted sm:flex-row">
+    <span>© 2026 JA kcasting</span>
+    <a class="font-bold text-[var(--blue-2)]">0533116166</a>
+  </div>
+</footer>
+
+<div class="fixed bottom-5 left-5 z-50 rounded-full bg-[var(--blue-2)] px-4 py-2 text-xs font-bold text-white shadow-lg">
+  Mock #2 · أزرق سعودي مؤسسي
+</div>
+
+</body>
+</html>
