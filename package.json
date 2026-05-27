@@ -1,17 +1,19 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#07111F" />
-    <meta
-      name="description"
-      content="Blumark24 Talent - منصة مواهب عربية RTL للإعلانات والإنتاج والكاستنج الخاص عبر واتساب."
-    />
-    <title>Blumark24 Talent</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+{
+  "name": "ja-kcasting",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "lucide-react": "latest"
+  },
+  "devDependencies": {}
+}
